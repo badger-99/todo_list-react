@@ -1,10 +1,7 @@
 import { useState } from "react";
 import ListItem from "./ListItem";
-import todos from "./todos";
 
-const items = todos;
-const TodoList = () => {
-  const [tasks, setTasks] = useState(items)
+const TodoList = ({tasks, setTasks}) => {
 
   const handleClick = (id) => {
     const newTasks = tasks.map((task) => {
@@ -14,16 +11,33 @@ const TodoList = () => {
       return task
     }) 
     setTasks(newTasks)
-}
+  }
+  
+  const deleteTask = (id) => {
+    const newTask = tasks.filter((task) => task.id !== id)
+    setTasks(newTask)
+  }
+
+  // const addTask = (str) => {
+  //   const newTask = {
+  //     id,
+  //     title: str,
+  //     completed: false
+  //   }
+
+  //   const newTasks = { ...tasks, newTask }
+  //   setTasks(newTasks)
+  // }
 
   return (
       <ul>
       {
         tasks.map((task) => {
-          const { id, title, completed } = task
-          return <ListItem key={id} id={id} title={title} completed={completed} handleClick={handleClick} />
+          const { id } = task
+          return <ListItem key={id} task={task} handleClick={handleClick} deleteTask={deleteTask} />
         })
         }
+      <button>click me</button>
       </ul>
   )
 }
