@@ -1,6 +1,10 @@
+import Header from "./components/Header";
+
 const TodoApp = () => {
   return (
-    <div>TodoApp</div>
+    <div>
+      <Header />
+    </div>
   )
 }
 export default TodoApp
