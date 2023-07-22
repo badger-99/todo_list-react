@@ -6,14 +6,14 @@ const items = todos;
 const TodoList = () => {
   const [tasks, setTasks] = useState(items)
 
-  const handleClick = () => {
+  const handleClick = (id) => {
     const newTasks = tasks.map((task) => {
       if (task.id === id) {
         return {...task, completed:!task.completed}
       }
       return task
     }) 
-    setTasks()
+    setTasks(newTasks)
 }
 
   return (

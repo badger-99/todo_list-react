@@ -1,6 +1,6 @@
-const ListItem = ({id, title, handleClick}) => {
+const ListItem = ({id, title, completed, handleClick}) => {
   return (
-    <li> <input type="checkbox" id={id} onChange={()=>handleClick(id)}/> { title }</li>
+    <li> <input type="checkbox" checked={completed} id={id} onChange={()=>handleClick(id)}/> { title }</li>
   )
 }
 export default ListItem
