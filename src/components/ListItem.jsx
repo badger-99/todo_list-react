@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 const ListItem = ({ task, handleClick, deleteTask }) => {
   const { id, title, completed } = task;
+  const [isEditable, setIsEditable] = useState(true)
   return (
     <li>
       {' '}
@@ -9,9 +12,17 @@ const ListItem = ({ task, handleClick, deleteTask }) => {
         id={id}
         onChange={() => handleClick(id)}
       />{' '}
-      {title}
-      <button type="button" onClick={()=>deleteTask(id)}>remove</button>
+      <input
+        type='text'
+        value={title}
+        readOnly={isEditable}
+        style={{ width: '13rem', border: 'none' }}
+      />
+      <button type='button' onClick={() => deleteTask(id)}>
+        remove
+      </button>
+      <button type='button' onClick={()=>setIsEditable(!isEditable)}>edit</button>
     </li>
   );
 };
-export default ListItem
+export default ListItem;

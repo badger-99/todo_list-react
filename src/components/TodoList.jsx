@@ -18,17 +18,6 @@ const TodoList = ({tasks, setTasks}) => {
     setTasks(newTask)
   }
 
-  // const addTask = (str) => {
-  //   const newTask = {
-  //     id,
-  //     title: str,
-  //     completed: false
-  //   }
-
-  //   const newTasks = { ...tasks, newTask }
-  //   setTasks(newTasks)
-  // }
-
   return (
       <ul>
       {
@@ -37,7 +26,6 @@ const TodoList = ({tasks, setTasks}) => {
           return <ListItem key={id} task={task} handleClick={handleClick} deleteTask={deleteTask} />
         })
         }
-      <button>click me</button>
       </ul>
   )
 }
