@@ -1,6 +1,10 @@
+import InputTodos from "./InputTodos";
+
 const TodosLogic = () => {
   return (
-    <div>TodosLogic goes here</div>
+    <div>
+      <InputTodos />
+    </div>
   )
 }
 export default TodosLogic
