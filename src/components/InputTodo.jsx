@@ -1,6 +1,6 @@
-const InputTodos = () => {
+const InputTodo = () => {
   return (
     <div>Input field goes here...</div>
   )
 }
-export default InputTodos
+export default InputTodo

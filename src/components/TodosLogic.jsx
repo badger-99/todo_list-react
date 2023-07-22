@@ -1,9 +1,11 @@
-import InputTodos from "./InputTodos";
+import InputTodo from "./InputTodo";
+import TodoList from "./TodoList";
 
 const TodosLogic = () => {
   return (
     <div>
-      <InputTodos />
+      <InputTodo />
+      <TodoList />
     </div>
   )
 }
