@@ -1,9 +1,16 @@
+import ListItem from "./ListItem";
+import todos from "./todos";
+
+const items = todos;
 const TodoList = () => {
   return (
       <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
+      {
+        items.map((item) => {
+          const { id, title, completed } = item
+          return <ListItem key={id} id={id} title={title} completed={completed} />
+        })
+        }
       </ul>
   )
 }
