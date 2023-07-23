@@ -42,6 +42,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **UI built by Vite + React**
+- **Local storage functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
