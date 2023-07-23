@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { v4 } from 'uuid';
+import { FaPlusCircle } from 'react-icons/fa';
+
 
 const InputTodo = ({ tasks, setTasks }) => {
   const [value, setValue] = useState('');
@@ -30,7 +32,7 @@ const InputTodo = ({ tasks, setTasks }) => {
           onChange={(e) => setValue(e.target.value)}
         />
         <button type='submit' className='input-submit'>
-          submit
+          <FaPlusCircle />
         </button>
       </form>
       <span className='submit-warning'>{message}</span>
