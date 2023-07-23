@@ -32,7 +32,13 @@ const InputTodo = ({ tasks, setTasks }) => {
           onChange={(e) => setValue(e.target.value)}
         />
         <button type='submit' className='input-submit'>
-          <FaPlusCircle />
+          <FaPlusCircle
+            style={{
+              color: '#5e5e5e',
+              fontSize: '20px',
+              marginTop: '2px',
+            }}
+          />
         </button>
       </form>
       <span className='submit-warning'>{message}</span>

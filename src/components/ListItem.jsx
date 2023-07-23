@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import styles from '@/styles/TodoItem.module.css';
+import { FaTrash } from 'react-icons/fa';
+import { AiFillEdit } from 'react-icons/ai';
+
 
 const ListItem = ({ task, handleClick, deleteTask, setUpdate }) => {
   const { id, title, completed } = task;
@@ -41,10 +44,12 @@ const ListItem = ({ task, handleClick, deleteTask, setUpdate }) => {
           onChange={() => handleClick(id)}
         />
         <span style={completed ? completedStyle : null}>{title}</span>
-        <button type='button' onClick={() => deleteTask(id)}>
-          Remove
+        <button onClick={handleEditing}>
+          <AiFillEdit style={{ color: '#5e5e5e', fontSize: '16px' }} />
         </button>
-        <button onClick={handleEditing}>Edit</button>
+        <button type='button' onClick={() => deleteTask(id)}>
+          <FaTrash style={{ color: '#5e5e5e', fontSize: '16px' }} />
+        </button>
       </div>
       <input
         type='text'
