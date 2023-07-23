@@ -22,15 +22,18 @@ const InputTodo = ({ tasks, setTasks }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form-container'>
         <input
           type='text'
           value={value}
+          className='input-text'
           onChange={(e) => setValue(e.target.value)}
         />
-        <button type='submit'>submit</button>
+        <button type='submit' className='input-submit'>
+          submit
+        </button>
       </form>
-      <span>{message}</span>
+      <span className='submit-warning'>{message}</span>
     </>
   );
 };
