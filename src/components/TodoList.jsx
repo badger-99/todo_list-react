@@ -14,16 +14,34 @@ const TodoList = ({tasks, setTasks}) => {
   }
   
   const deleteTask = (id) => {
-    const newTask = tasks.filter((task) => task.id !== id)
-    setTasks(newTask)
+    const newTasks = tasks.filter((task) => task.id !== id)
+    setTasks(newTasks)
   }
+
+  const setUpdate = (updatedTitle, id) => {
+    const newTasks = tasks.map((todo) => {
+      if (todo.id === id) {
+        todo.title = updatedTitle;
+      }
+      return todo;
+    })
+    setTasks(newTasks)
+  };
 
   return (
       <ul>
       {
         tasks.map((task) => {
           const { id } = task
-          return <ListItem key={id} task={task} handleClick={handleClick} deleteTask={deleteTask} />
+          return (
+            <ListItem
+              key={id}
+              task={task}
+              handleClick={handleClick}
+              deleteTask={deleteTask}
+              setUpdate={setUpdate}
+            />
+          );
         })
         }
       </ul>

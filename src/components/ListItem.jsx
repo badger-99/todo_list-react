@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '@/styles/TodoItem.module.css';
 
-const ListItem = ({ task, handleClick, deleteTask }) => {
+const ListItem = ({ task, handleClick, deleteTask, setUpdate }) => {
   const { id, title, completed } = task;
 
   const completedStyle = {
@@ -25,6 +25,12 @@ const ListItem = ({ task, handleClick, deleteTask }) => {
     editMode.display = 'none';
   }
 
+    const handleUpdatedDone = (event) => {
+      if (event.key === 'Enter') {
+        setEditing(false);
+      }
+    };
+
   return (
     <li className={styles.item}>
       <div className={styles.content} style={viewMode}>
@@ -45,6 +51,8 @@ const ListItem = ({ task, handleClick, deleteTask }) => {
         value={title}
         className={styles.textInput}
         style={editMode}
+        onChange={(e) => setUpdate(e.target.value, id)}
+        onKeyDown={handleUpdatedDone}
       />
     </li>
   );
